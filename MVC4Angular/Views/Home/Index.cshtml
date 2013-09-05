@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Index";
+}
+
+<div ng-app="mainApp">
+     <div ng-controller="mainController">
+       <input type="text" ng-model="name" placeholder="Name" /> <br />
+         <button type="button" class="btn" ng-click="addNote(name)">Add Note</button>
+       {{title}} {{added}}
+     </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/apps/main/main.js"></script>
+    <script src="~/Scripts/apps/main/mainController.js"></script>
+    <script src="~/Scripts/apps/main/noteService.js"></script>
+}
+
