@@ -7,12 +7,17 @@
 /// <reference path="../jasmine.js" />
 'use strict';
 
-describe('I can connect to notesHub', function () {
+describe('noteService Tests', function () {
+    var noteSvc;
 
     beforeEach(module('mainApp'));
-
-    it('should connect', inject(function (noteService) {
-        noteService.connect(); 
+    beforeEach(inject(function (noteService) {
+        noteSvc = noteService;
+        noteSvc.connect();
     }));
+
+    it('should attempt connection',function () {
+        expect(noteSvc.isConnecting()).toBe(true);
+    });
 
 })
